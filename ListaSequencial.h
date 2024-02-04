@@ -105,4 +105,9 @@ int lista_vazia_fun(Lista_fun* li);
 
 
 
-void imprime_lista(Lista_os* li);
+void imprime_lista_os(Lista_os* li);
+void imprime_todas_os(Lista_os* li);
+void imprime_lista_eq(Lista_eq* li);
+void imprime_lista_cli(Lista_cli* li);
+void imprime_lista_ser(Lista_ser* li);
+void imprime_lista_fun(Lista_fun* li);

@@ -416,16 +416,79 @@ int lista_vazia_fun(Lista_fun* li){
    return (li->codfun == 0);
 }
 
-
-
-void imprime_lista(Lista_os* li){
-   if(li == NULL)
+void imprime_lista_os(Lista_os* li){
+    if(li == NULL){
        return;
-   int i;
-   for(i=0; i< li->codord; i++){
-      printf("Codigo da Ordem de Serviço: %d\n",li->OrdemDeServico[i].codord);
-      printf("Codigo do Equipamento: %d\n",li->OrdemDeServico[i].codequi);
-      printf("Cliente: %s\n",li->OrdemDeServico[i].codcli);
-      printf("-------------------------------\n");
-   }
+    }
+    int i;
+    for(i=0; i <=li->codord; i++){ // ADICIONAR UM IF PRA SÓ IMPRIMIR QUANDO FOR IGUAL
+        if(i == li->codord)
+            printf("Codigo da Ordem de Serviço: %d\n",li->OrdemDeServico[i].codord);
+            printf("Codigo do Equipamento: %d\n",li->OrdemDeServico[i].codequi);
+            printf("Cliente: %d\n",li->OrdemDeServico[i].codcli);
+            printf("Serviço Realizado: %d\n",li->OrdemDeServico[i].codser);
+            printf("Funcionário: %d\n",li->OrdemDeServico[i].codfun);
+            printf("Status da Ordem: %d\n",li->OrdemDeServico[i].status);
+            printf("-------------------------------\n");
+    }
+}
+void imprime_todas_os(Lista_os* li){
+    int i;
+    for(i = 0; i == sizeof(Lista_os); i++){
+        if(li->OrdemDeServico[i].status==0)
+            printf("Codigo da Ordem de Serviço: %d\n",li->OrdemDeServico[i].codord);
+            printf("Codigo do Equipamento: %d\n",li->OrdemDeServico[i].codequi);
+            printf("Cliente: %d\n",li->OrdemDeServico[i].codcli);
+            printf("Serviço Realizado: %d\n",li->OrdemDeServico[i].codser);
+            printf("Funcionário: %d\n",li->OrdemDeServico[i].codfun);
+            printf("Status da Ordem: %d\n",li->OrdemDeServico[i].status);
+            printf("-------------------------------\n");
+    }
+}
+void imprime_lista_eq(Lista_eq* li){
+    if(li == NULL){
+       return;
+    }
+    int i;
+    for(i=0; i <= li->codequi; i++){
+        if(i == li->codequi)
+            printf("Codigo do Equipamento: %d\n",li->Equipamento[i].codequi);
+            printf("Nome do Equipamento: %s\n",li->Equipamento[i].equipamento);
+    }
+}
+
+void imprime_lista_cli(Lista_cli* li){
+    if(li == NULL){
+       return;
+    }
+    int i;
+    for(i=0; i == li->codcli; i++){
+        if(i == li->codcli)
+            printf("Codigo do Cliente: %d\n",li->Cliente[i].codcli);
+            printf("Nome do Cliente: %s\n",li->Cliente[i].cliente);
+    }
+}
+
+void imprime_lista_ser(Lista_ser* li){
+    if(li == NULL){
+       return;
+    }
+    int i;
+    for(i=0; i == li->codser; i++){
+        if(i == li->codser)
+            printf("Codigo do Serviço: %d\n",li->Servico[i].codser);
+            printf("Serviço: %s\n",li->Servico[i].servico);
+    }
+}
+
+void imprime_lista_fun(Lista_fun* li){
+    if(li == NULL){
+       return;
+    }
+    int i;
+    for(i=0; i == li->codfun; i++){
+        if(i == li->codfun)
+            printf("Codigo do Funcionário: %d\n",li->Funcionario[i].codfun);
+            printf("Nome do Funcionário: %s\n",li->Funcionario[i].codfun);
+    }
 }
